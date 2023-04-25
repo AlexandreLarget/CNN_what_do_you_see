@@ -1,0 +1,35 @@
+h1 {
+    background-color: #EEEEEE;
+    padding: 0.4em;
+}
+
+h3 {
+    font-size:1.5em;
+}
+
+h4.subt {
+    font-size:1em;
+    background-color: #EEEEEE;
+    text-align: center;
+}
+
+span.css-16idsys.e16nr0p34 {
+    font-size:2em;
+}
+
+p.head {
+    text-align: left;
+    font-size: 1em;
+}
+
+p.tail {
+    font-size: 1.2em;
+}
+
+p.ccl {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 2em;
+}
