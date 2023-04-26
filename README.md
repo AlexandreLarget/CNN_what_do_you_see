@@ -6,15 +6,13 @@ To do so, we will work on maybe the most popular convolutional neural network (C
 
 #### Summary<a class="anchor" id=0></a>
 [Method](#1) <br/>
-[Resuts](#2) <br/>
+[Resuts](#2)
   * [Image 1](#21)
-    * [VGG16 pretrained](#211)
-    * [VGG16 not trained](#212)
-    * [comparison](#213)
+    * [VGG16 pretrained](#211) | [VGG16 not trained](#212)
   * [Image 2](#22)
-    * [VGG16 pretrained](#221)
-    * [VGG16 not trained](#222)
-    * [comparison](#223)
+    * [VGG16 pretrained](#221) | [VGG16 not trained](#222)
+    
+[Observations](#3)<br/>
     
 
 
@@ -102,12 +100,6 @@ Output from the 5th convolutional block.
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model2_img_dim_14_14_12.png?raw=true" width="90%" height="90%">
 </p>
 
-### Comparison<a class="anchor" id=213></a>
-
-<p align=center>
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/image1_comparison.png?raw=true" width="70%" height="70%">
-</p>
-
 ###### [summary](#0)
 ## Image 2<a class="anchor" id=22></a>
 
@@ -170,11 +162,31 @@ Output from the 5th convolutional block.
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model2_img_dim_14_14_12.png?raw=true" width="90%" height="90%">
 </p>
 
-### Comparison<a class="anchor" id=223></a>
+# Observations<a class="anchor" id=3></a>
+The images below are the aggregation of all the images displayed by each convolutional block.<br/>
+For exemple, for the block 5, the 512 images have been aggregated together then normalized [0, 255] to be displayed.
 
+<div>
 <p align=center>
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/image1_comparison.png?raw=true" width="70%" height="70%">
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/image1_comparison.png?raw=true" width="45%" height="45%">
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/image2_comparison.png?raw=true" width="45%" height="45%">
 </p>
+</div>
+
+
+Note the difference between the pretrained and not trained VGG16: <br/>
+
+On the 3 first blocks, the untrained model displays images that were less modified, closer from the original one.<br/>
+
+It is because the kernels have issue to sort the information and prioritize the parts of the image that will allow the model to recognize identify it.<br/>
+On the last 2 blocks, this lake of prioritization leads to blurry results.<br/><br/>
+
+For the pretrained model on the opposite, the 2 first blocks quickly identify the sharps and edges of the image which helps the 3 last blocks to focus on the most pertinent areas.<br/><br/>
+
+This allows us to conclude that a CNN trained with "imagenet" learns to identify patterns more than specific images.<br/>
+This is why we can use these pretrained models (transfer-learning) and still have great results with images they were not trained on.
+
+The model learns to see things in a way !
 
 ###### [summary](#0)
 
