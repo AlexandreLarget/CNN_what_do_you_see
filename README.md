@@ -7,10 +7,16 @@ To do so, we will work on maybe the most popular convolutional neural network (C
 
 ## Quick sum up on the VGG16 and the CNN operating mode
 
-The VGG16 (Visual Geometry Group) is composed of 16 layers, 13 convolutional and 3 dense. 
+The VGG16 (Visual Geometry Group) is composed of 16 layers, 13 convolutional and 3 dense.[^2] 
 
-
+<p align=center>
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/VGG16.png?raw=true" width="50%" height="50%">
+  </p>
+  
+  
+  
+  
 
 
 [^1]: [Very Deep Convolutional Networks for Large-Scale Image Recognition, by Karen Simonyan and Andrew Zisserman](https://arxiv.org/abs/1409.1556)
+[^2]: [Wikimedia commons](https://commons.wikimedia.org/wiki/File:VGG16.png)
