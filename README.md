@@ -19,7 +19,9 @@ We modify the model to produce 5 outputs (1 per convolutional block).
   <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/layer_ouputs.png?raw=true" width="50%" height="50%">
 </p>
 
-Since each neuron performs transformation by slidding it kernel through the image, the new outputs will allow us to see our image after those transformations and at several steps in the network.
+Since each neuron performs transformation by slidding it kernel through the image, the new outputs will allow us to see our image after those transformations and at several steps in the network.<br/>
+We will use **2 VGG16, one pretrained on "imagenet"[^3], the second not trained**, so with random normalized weights.<br/>
+We will compare visually the transformations performed by the 2 models and see how the training affects these transformations.
   
   
 # Results
@@ -28,13 +30,15 @@ For each image, we will display 12 output images per convolutional block (images
 
 ## Image 1
 
-#### Original image[^3] 
+#### Original image[^4] 
 <p align=center>
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden.jpg?raw=true" width="25%" height="25%">
 </p>
 
-#### Output from the 1st convolutional block.
+#### VGG16 pretrained
+
 <p align=center>
+ Output from the 1st convolutional block.
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_224_224_12.png?raw=true" width="90%" height="90%">
 </p>
 
@@ -61,4 +65,5 @@ For each image, we will display 12 output images per convolutional block (images
 
 [^1]: [Very Deep Convolutional Networks for Large-Scale Image Recognition, by Karen Simonyan and Andrew Zisserman](https://arxiv.org/abs/1409.1556)
 [^2]: [Photo credit: Gorlapraveen, Wikimedia commons](https://commons.wikimedia.org/wiki/File:VGG16.png)
-[^3]: [Photo credit: Karen Arnold, Public domain pictures](https://www.publicdomainpictures.net/en/view-image.php?image=437858&picture=golden-retriever-dog)
+[^3]: Imagenet
+[^4]: [Photo credit: Karen Arnold, Public domain pictures](https://www.publicdomainpictures.net/en/view-image.php?image=437858&picture=golden-retriever-dog)
