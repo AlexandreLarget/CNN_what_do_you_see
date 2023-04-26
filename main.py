@@ -1,12 +1,26 @@
 import streamlit as st
 import tensorflow as tf
+from tensorflow.keras.applications.vgg16 import VGG16
 import numpy as np
 import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
 
-MODEL_trained = tf.keras.saving.load_model("activation_model.h5")
-MODEL_raw = tf.keras.saving.load_model("activation_model_2.h5")
+st.set_page_config(layout="wide")
+
+@st.cache_resource
+def load_models():
+    model1 = VGG16(include_top=False, weights="imagenet", input_shape=(224, 224, 3))
+    model2 = VGG16(include_top=False, weights=None, input_shape=(224, 224, 3))
+    return model1, model2
+
+model1, model2 = load_models()
+
+layer_output1 = [layer.output for layer in model1.layers if "conv2" in layer.name]
+MODEL_trained = tf.keras.Model(model1.input, layer_output1)
+
+layer_output2 = [layer.output for layer in model2.layers if "conv2" in layer.name]
+MODEL_raw = tf.keras.Model(model2.input, layer_output2)
 
 def img_preprocessing(image):
   """
@@ -39,7 +53,6 @@ def get_matrix_list(num_layer, activation, n_plot):
     list_mat = df.sort_values("mat_sum", ascending=False).head(n_plot).mat_idx.values.astype("int")
     return list_mat, matrix
 
-st.set_page_config(layout="wide")
 
 with open("style.css") as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -159,7 +172,7 @@ if image and activation_button:
                 for mat in range(matrix.shape[2]):
                     matrix_agg += (matrix[:, :, mat]) ** 2
                 matrix_agg *= 255.0 / matrix_agg.max()
-                fig, ax = plt.subplots(figsize=(5, 5))
+                fig, ax = plt.subplots(figsize=(2, 2))
                 ax.imshow(matrix_agg)
                 ax.axis("off")
                 st.pyplot(fig, use_container_width=True)
