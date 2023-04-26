@@ -10,11 +10,16 @@ To do so, we will work on maybe the most popular convolutional neural network (C
 The VGG16 (Visual Geometry Group) is composed of 16 layers, 13 convolutional and 3 dense.[^2] 
 
 <p align=center>
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/VGG16.png?raw=true" width="50%" height="50%">
-  </p>
+  <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/VGG16.png?raw=true" width="50%" height="50%">
+</p>
   
-  
-  
+We modify the model to produce 5 outputs (1 per convolutional block).
+
+<p align=center>
+  <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/layer_ouputs.png?raw=true" width="50%" height="50%">
+</p>
+
+Since each neuron performs transformation by slidding it kernel through the image, the new outputs will allow us to see our image after those transformations and at several steps in the network.
   
 
 
