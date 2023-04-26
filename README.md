@@ -7,4 +7,4 @@ To do so, we will work on maybe the most popular convolutional neural network (C
 
 
 
-[^1]: footnote
+[^1]: [Very Deep Convolutional Networks for Large-Scale Image Recognition, by Karen Simonyan and Andrew Zisserman](https://arxiv.org/abs/1409.1556)
