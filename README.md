@@ -35,31 +35,27 @@ For each image, we will display 12 output images per convolutional block (images
 
 #### Output from the 1st convolutional block.
 <p align=center>
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_224_224_12.png?raw=true" width="100%" height="100%">
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_224_224_12.png?raw=true" width="90%" height="90%">
 </p>
 
-#### Output from the 2st convolutional block.
+#### Output from the 2nd convolutional block.
 <p align=center>
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_112_112_12.png?raw=true" width="100%" height="100%">
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_112_112_12.png?raw=true" width="90%" height="90%">
 </p>
 
-#### Output from the 3st convolutional block.
+#### Output from the 3rd convolutional block.
 <p align=center>
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_56_56_12.png?raw=true" width="100%" height="100%">
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_56_56_12.png?raw=true" width="90%" height="90%">
 </p>
 
-#### Output from the 1st convolutional block.
+#### Output from the 4th convolutional block.
 <p align=center>
-Image dimensions: 224x224 px <br/>
-Number of output images at this step: 64
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_224_224_12.png?raw=true" width="100%" height="100%">
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_28_28_12.png?raw=true" width="90%" height="90%">
 </p>
 
-#### Output from the 1st convolutional block.
+#### Output from the 5th convolutional block.
 <p align=center>
-Image dimensions: 224x224 px <br/>
-Number of output images at this step: 64
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_224_224_12.png?raw=true" width="100%" height="100%">
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_14_14_12.png?raw=true" width="90%" height="90%">
 </p>
 
 
