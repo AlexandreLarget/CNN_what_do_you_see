@@ -30,37 +30,71 @@ For each image, we will display 12 output images per convolutional block (images
 
 ## Image 1
 
-#### Original image[^4] 
+### Original image[^4] 
 <p align=center>
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden.jpg?raw=true" width="25%" height="25%">
 </p>
 
-#### VGG16 pretrained
+### VGG16 pretrained
 
+Output from the 1st convolutional block.
 <p align=center>
- Output from the 1st convolutional block.
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_224_224_12.png?raw=true" width="90%" height="90%">
 </p>
 
-#### Output from the 2nd convolutional block.
+Output from the 2nd convolutional block.
 <p align=center>
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_112_112_12.png?raw=true" width="90%" height="90%">
 </p>
 
-#### Output from the 3rd convolutional block.
+Output from the 3rd convolutional block.
 <p align=center>
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_56_56_12.png?raw=true" width="90%" height="90%">
 </p>
 
-#### Output from the 4th convolutional block.
+Output from the 4th convolutional block.
 <p align=center>
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_28_28_12.png?raw=true" width="90%" height="90%">
 </p>
 
-#### Output from the 5th convolutional block.
+Output from the 5th convolutional block.
 <p align=center>
 <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_img_dim_14_14_12.png?raw=true" width="90%" height="90%">
 </p>
+
+### VGG16 not trained
+
+Output from the 1st convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model2_img_dim_224_224_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 2nd convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model2_img_dim_112_112_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 3rd convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model2_img_dim_56_56_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 4th convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model2_img_dim_28_28_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 5th convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model2_img_dim_14_14_12.png?raw=true" width="90%" height="90%">
+</p>
+
+### Comparison
+
+<div>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_aggregated_img_dim_224_224.png?raw=true" width="50%" height="50%">
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model2_aggregated_img_dim_224_224.png?raw=true" width="50%" height="50%">
+</div>
 
 
 [^1]: [Very Deep Convolutional Networks for Large-Scale Image Recognition, by Karen Simonyan and Andrew Zisserman](https://arxiv.org/abs/1409.1556)
