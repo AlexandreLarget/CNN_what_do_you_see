@@ -38,6 +38,7 @@ We will compare visually the transformations performed by the 2 models and see h
 # Results<a class="anchor" id=2></a>
 
 For each image, we will display 12 output images per convolutional block (images are selected by sorting the sum of their matrix).
+Since the shape of each image after been through is [X, X, 1], the displayed plots will be in black and white. We are using the default colormap of matplotlib, 'viridis', which variations goes from dark blue to yellow.
 
 ## Image 1<a class="anchor" id=21></a>
 
@@ -178,10 +179,12 @@ Note the difference between the pretrained and not trained VGG16: <br/>
 
 On the 3 first blocks, the untrained model displays images that were less modified, closer from the original one.<br/>
 
-It is because the kernels have issue to sort the information and prioritize the parts of the image that will allow the model to recognize identify it.<br/>
-On the last 2 blocks, this lake of prioritization leads to blurry results.<br/><br/>
+It is because the untrained kernels are not able to identify edges and sharps. Thus the model have issue to sort the information and prioritize the parts of the image that will help recognize it.<br/>
+On the last 2 blocks, this lake of prioritization leads to blurry results, the model hasn't identify the important zones and looks everywhere.<br/><br/>
 
-For the pretrained model on the opposite, the 2 first blocks quickly identify the sharps and edges of the image which helps the 3 last blocks to focus on the most pertinent areas.<br/><br/>
+For the pretrained model on the opposite, the 2 first blocks quickly identify the sharps and edges of the image which helps the 3 last blocks to focus on the most pertinent areas. <br/>
+For the dog image, we can clearly see a triangle where the head is located.
+For the boat it is mostly focused on the front and the contact between the water and the hull.<br/><br/>
 
 This allows us to conclude that a CNN trained with "imagenet" learns to identify patterns more than specific images.<br/>
 This is why we can use these pretrained models (transfer-learning) and still have great results with images they were not trained on.
