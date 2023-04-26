@@ -4,21 +4,17 @@ Neural networks are always refered to black-box because it is hard to understand
 Here we gonna open this black-box and give some visual explanations to understand how a convolutional neural network is able to "see" things.<br/>
 To do so, we will work on maybe the most popular convolutional neural network (CNN), the VGG16. Despite its gae, it was first introduced in 2014[^1], it is still used in many cases and applications and keep producing mazing results compared to newer architectures.
 
-#### Summary
+#### Summary<a class="anchor" id=0></a>
 [Method](#1) <br/>
 [Resuts](#2) <br/>
   * [Image 1](#21)
     * [VGG16 pretrained](#211)
     * [VGG16 not trained](#212)
     * [comparison](#213)
-   * [Image 2](#22)
+  * [Image 2](#22)
     * [VGG16 pretrained](#221)
     * [VGG16 not trained](#222)
     * [comparison](#223)
-   * [Image 3](#23)
-    * [VGG16 pretrained](#231)
-    * [VGG16 not trained](#232)
-    * [comparison](#233)
     
 
 
@@ -27,7 +23,7 @@ To do so, we will work on maybe the most popular convolutional neural network (C
 The VGG16 (Visual Geometry Group) is composed of 16 layers, 13 convolutional and 3 dense.[^2] 
 
 <p align=center>
-  <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/VGG16.png?raw=true" width="50%" height="50%">
+  <img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/VGG16.png?raw=true" width="60%" height="60%">
 </p>
   
 We modify the model to produce 5 outputs (1 per convolutional block).
@@ -108,13 +104,82 @@ Output from the 5th convolutional block.
 
 ### Comparison<a class="anchor" id=213></a>
 
-<div>
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model1_aggregated_img_dim_224_224.png?raw=true" width="50%" height="50%">
-<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/golden_model2_aggregated_img_dim_224_224.png?raw=true" width="50%" height="50%">
-</div>
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/image1_comparison.png?raw=true" width="70%" height="70%">
+</p>
 
+###### [summary](#0)
+## Image 2<a class="anchor" id=22></a>
+
+### Original image[^5] 
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat.jpg?raw=true" width="50%" height="50%">
+</p>
+
+### VGG16 pretrained<a class="anchor" id=221></a>
+
+Output from the 1st convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model1_img_dim_224_224_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 2nd convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model1_img_dim_112_112_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 3rd convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model1_img_dim_56_56_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 4th convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model1_img_dim_28_28_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 5th convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model1_img_dim_14_14_12.png?raw=true" width="90%" height="90%">
+</p>
+
+### VGG16 not trained<a class="anchor" id=222></a>
+
+Output from the 1st convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model2_img_dim_224_224_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 2nd convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model2_img_dim_112_112_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 3rd convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model2_img_dim_56_56_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 4th convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model2_img_dim_28_28_12.png?raw=true" width="90%" height="90%">
+</p>
+
+Output from the 5th convolutional block.
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/boat_model2_img_dim_14_14_12.png?raw=true" width="90%" height="90%">
+</p>
+
+### Comparison<a class="anchor" id=223></a>
+
+<p align=center>
+<img src="https://github.com/AlexandreLarget/CNN_what_do_you_see/blob/main/image/image1_comparison.png?raw=true" width="70%" height="70%">
+</p>
+
+###### [summary](#0)
 
 [^1]: [Very Deep Convolutional Networks for Large-Scale Image Recognition, by Karen Simonyan and Andrew Zisserman](https://arxiv.org/abs/1409.1556)
-[^2]: [Photo credit: Gorlapraveen, Wikimedia commons](https://commons.wikimedia.org/wiki/File:VGG16.png)
-[^3]: Imagenet
-[^4]: [Photo credit: Karen Arnold, Public domain pictures](https://www.publicdomainpictures.net/en/view-image.php?image=437858&picture=golden-retriever-dog)
+[^2]: [Photo credit: VGG16 by Gorlapraveen, Wikimedia commons](https://commons.wikimedia.org/wiki/File:VGG16.png)
+[^3]: [Imagenet](https://www.image-net.org/)
+[^4]: [Photo credit: Golden Retriever Dog by Karen Arnold, Public domain pictures](https://www.publicdomainpictures.net/en/view-image.php?image=437858&picture=golden-retriever-dog)
+[^5]: [Photo credit: Fishing boat in the Canary Islands by Ian Sherlock, Wikimedia commons](https://commons.wikimedia.org/wiki/File:Fishing_boat_in_the_Canary_Islands.jpg)
