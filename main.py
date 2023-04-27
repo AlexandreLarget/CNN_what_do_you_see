@@ -1,5 +1,6 @@
 import streamlit as st
-import tensorflow as tf
+from tensorflow import image, expand_dims
+from tensorflow.keras import Model
 from tensorflow.keras.applications.vgg16 import VGG16
 import numpy as np
 import pandas as pd
@@ -17,19 +18,19 @@ def load_models():
 model1, model2 = load_models()
 
 layer_output1 = [layer.output for layer in model1.layers if "conv2" in layer.name]
-MODEL_trained = tf.keras.Model(model1.input, layer_output1)
+MODEL_trained = Model(model1.input, layer_output1)
 
 layer_output2 = [layer.output for layer in model2.layers if "conv2" in layer.name]
-MODEL_raw = tf.keras.Model(model2.input, layer_output2)
+MODEL_raw = Model(model2.input, layer_output2)
 
-def img_preprocessing(image):
+def img_preprocessing(img):
   """
   Preprocess an image for our model by resizing it and normalizing it.
   """
-  img = np.asarray(image)
-  img = tf.image.resize(img, size=[224,224])
+  img = np.asarray(img)
+  img = image.resize(img, size=[224,224])
   img = img / 255.0
-  img = tf.expand_dims(img, 0)
+  img = expand_dims(img, 0)
   return img
 
 def get_matrix_list(num_layer, activation, n_plot):
@@ -77,11 +78,11 @@ st .markdown('''
              ''', unsafe_allow_html=True)
 
 with st.sidebar:
-    image = st.file_uploader("Choose an image", type="jpg")
+    img = st.file_uploader("Choose an image", type="jpg")
     model_selected = st.selectbox("model", ("VGG pretrained on imagenet", "VGG not trained"))
     num_plot = st.selectbox("number of plot per layer to display", (6, 12, 18))
-    if image is not None:
-        image = Image.open(image)
+    if img is not None:
+        img = Image.open(img)
 
         # Display image
         col1, col2, col3 = st.columns([1,4,1]) #to center the image
@@ -90,7 +91,7 @@ with st.sidebar:
             st.write(' ')
 
         with col2:
-            img = np.array(image)
+            img = np.array(img)
             st.image(img)
 
         with col3:
@@ -98,18 +99,18 @@ with st.sidebar:
 
 
         # Send image through the model
-        processed_img = img_preprocessing(image)
+        processed_img = img_preprocessing(img)
 
 
-    # Model selection
-    if image and model_selected == "VGG pretrained on imagenet":
+        # Model selection
+    if img is not None and model_selected == "VGG pretrained on imagenet":
         activation = MODEL_trained.predict(processed_img)
-    elif image:
+    elif img is not None and model_selected == "VGG not trained":
         activation = MODEL_raw.predict(processed_img)
 
     activation_button = st.button("ACTIVATION", use_container_width=True)
 
-if image and activation_button:
+if img is not None and activation_button:
     for i in range(len(activation)):
 
         list_mat, matrix = get_matrix_list(num_layer=i, activation=activation, n_plot=num_plot)
