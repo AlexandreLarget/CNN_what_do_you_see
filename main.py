@@ -64,15 +64,19 @@ st .markdown('''
             <br/>
             <p class='head'>This app will make you dive inside the "black box" of the VGG16. The VGG16 is a very popular convolutional neural network used for images recognition.<br/>
             It is composed of 5 convolutional blocks through which each image submitted will pass.<br/>
-            Inside these blocks, each neuron of each layer will transform the image by slidding a kernel (or filter) over all the pixels of it.<br/>
-            The neuron output image will be the result of these multiplications between the initial image and the kernel.</p>
+            Each convolutional block will transform the image by slidding a kernel (or filter) over all the pixels of it.<br/>
+            In doing so, it will try to extract features from the image in order to identify its content.<br/>
+            Then the transformed image goes in the next block with a lower definition and the process is repeated.<br/>
+            Here, the goal is not to identify the image uploaded but to see if the algorythm is able to focus on the important details of the image which would allow it to classify and use this image.
+            </p>
             To use the app: 
             <ul>- upload an image you want</ul>
             <ul>- select the model you want to use between a VGG16 pretrained on "imagenet" and a VGG16 not trained</ul>
             <ul>- choose the number of plot you want to display per neuron (between 6 and 18)</ul>
             <ul>- hit the activation button</ul>
             <p class='head'>For each layer, you will see your image after it went through the referred convolutional block.<br/>
-            The <b>aggregated matrix image</b> is an addition of all the matrices displayed by the convolutional block mentionned.</p>
+            Parts in yellow are the ones the algorythm consider interesting.<br/>
+            The <b>aggregated matrix image</b> is an addition of all the images displayed by the convolutional layer.</p>
             Enjoy !      
             <br/><br/>      
              ''', unsafe_allow_html=True)
@@ -183,16 +187,14 @@ if img is not None and activation_button:
     st.markdown(
         '''
         <p class="tail">
-        Note the difference between the pretrained and not trained VGG16: <br/></p>
+        Differences between the pretrained and not trained VGG16: <br/></p>
         <p class="head">
-        On the 3 first blocks, the model that was not trained display images that were less modified, closer from the original one.<br/>
-        It is because the kernels have issue to sort the information and prioritize the parts of the image that will allow the model to recognize identify it.<br/>
-        On the last 2 blocks, this lake of prioritization leads to blurry results.<br/><br/>
-        For the pretrained model on the opposite, the 2 first blocks quickly identify the sharps and edges of the image 
-        which helps the 3 last blocks to focus on the most pertinent areas.<br/><br/>
-        This allows us to conclude that a CNN trained with "imagenet" learns to identify patterns more than specific images.<br/>
-        This is why we can use these pretrained models (transfer-learning) and still have great results with images they were not trained on.</p>
+        If you compare the aggreagted matrix of the pretrained and the non-trained algorythm on the same image, you will realize that the pretrained model is able to identify the important contours.<br/>
+        By doing so, it is able to isolate the elements of the image as a human would do to identify its components.<br/>
+        On the opposite, the non-trained model execute a very homogeneous transformation of the image which tell us it doesn't know which information to prioritize.<br/>
+        This allows us to conclude that a model trained with "imagenet" doesn't learn to recognize certain categories of images but to extract information from any image, as a human brain would do.<br/>
+        By doing so, models trained this way can be used to solve problems they have never seen before. This is why the transfer-learning technics are so efficient and can be used for most of the situations.</p>
         <p class="ccl">
-        <b>The model learns to see things in a way !</b> 
+        <b>The model sees things in a way !</b> 
         </p> 
         ''', unsafe_allow_html=True)
