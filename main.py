@@ -67,7 +67,7 @@ st .markdown('''
             Each convolutional block will transform the image by slidding a kernel (or filter) over all the pixels of it.<br/>
             In doing so, it will try to extract features from the image in order to identify its content.<br/>
             Then the transformed image goes in the next block with a lower definition and the process is repeated.<br/>
-            Here, the goal is not to identify the image uploaded but to see if the algorythm is able to focus on the important details of the image which would allow it to classify and use this image.
+            Here, the goal is not to identify the image uploaded but to see if the algorithm is able to focus on the important details of the image which would allow it to classify and use this image.
             </p>
             To use the app: 
             <ul>- upload an image you want</ul>
@@ -75,7 +75,7 @@ st .markdown('''
             <ul>- choose the number of plot you want to display per neuron (between 6 and 18)</ul>
             <ul>- hit the activation button</ul>
             <p class='head'>For each layer, you will see your image after it went through the referred convolutional block.<br/>
-            Parts in yellow are the ones the algorythm consider interesting.<br/>
+            Parts in yellow are the ones the algorithm consider interesting.<br/>
             The <b>aggregated matrix image</b> is an addition of all the images displayed by the convolutional layer.</p>
             Enjoy !      
             <br/><br/>      
@@ -189,7 +189,7 @@ if img is not None and activation_button:
         <p class="tail">
         Differences between the pretrained and not trained VGG16: <br/></p>
         <p class="head">
-        If you compare the aggreagted matrix of the pretrained and the non-trained algorythm on the same image, you will realize that the pretrained model is able to identify the important contours.<br/>
+        If you compare the aggreagted matrix of the pretrained and the non-trained algorithm on the same image, you will realize that the pretrained model is able to identify the important contours.<br/>
         By doing so, it is able to isolate the elements of the image as a human would do to identify its components.<br/>
         On the opposite, the non-trained model execute a very homogeneous transformation of the image which tell us it doesn't know which information to prioritize.<br/>
         This allows us to conclude that a model trained with "imagenet" doesn't learn to recognize certain categories of images but to extract information from any image, as a human brain would do.<br/>
